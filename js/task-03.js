@@ -9,14 +9,22 @@
 // Значення в інпуті очищене від пробілів по краях
 // Якщо інпут порожній або містить лише пробіли, то замість імені у спан має підставлятися рядок "Anonymous"
 
+// 1 варіант
+// const textInput = document.querySelector('#name-input');
+// const textOutput = document.querySelector('#name-output');
+// const changeText = () => {
+//   if (textInput.value === '') {
+//     textOutput.textContent = 'Anonymous';
+//   } else {
+//     textOutput.textContent = textInput.value.trim();
+//   }
+// };
+// textInput.addEventListener('input', changeText);
 
 const textInput = document.querySelector('#name-input');
 const textOutput = document.querySelector('#name-output');
 const changeText = () => {
-  if (textInput.value === '') {
-    textOutput.textContent = 'Anonymous';
-  } else {
-    textOutput.textContent = textInput.value.trim();
-  }
+  const trimmedValue = textInput.value.trim();
+  textOutput.textContent = trimmedValue === '' ? 'Anonymous' : trimmedValue;
 };
 textInput.addEventListener('input', changeText);

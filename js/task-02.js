@@ -37,9 +37,11 @@ const images = [
 // Додай мінімальне оформлення галереї флексбоксами через CSS класи.
 
 const galleryItem = document.querySelector('.gallery');
-const markup = images.map(
-  image =>
-    `<li class="list-item"><img src="${image.url}" alt="${image.alt}" width=360 height=300 /></li>`
-);
+const markup = images
+  .map(
+    image =>
+      `<li class="list-item"><img src="${image.url}" alt="${image.alt}" width=360 height=300 /></li>`
+  )
+  .join('');
 galleryItem.insertAdjacentHTML('afterbegin', markup);
 galleryItem.setAttribute('style', 'list-style:none; display: flex; flex-wrap: wrap;');

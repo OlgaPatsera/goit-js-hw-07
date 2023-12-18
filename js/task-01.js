@@ -10,6 +10,6 @@ console.log(`Number of categories: ${items.length}`);
 items.forEach(element => {
   const elementTitle = element.querySelector('h2').textContent;
   console.log(`Category: ${elementTitle}`);
-  const elementsLength = element.querySelectorAll('li').length;
+  const elementsLength = element.querySelectorAll('ul > li').length;
   console.log(`Elements: ${elementsLength}`);
 });
