@@ -4,16 +4,16 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const boxes = document.querySelector("#boxes");
-const createBtn = document.querySelector("button[data-create]");
-const destroyBtn = document.querySelector("button[data-destroy]");
-const input = document.querySelector("input");
+const boxes = document.querySelector('#boxes');
+const createBtn = document.querySelector('button[data-create]');
+const destroyBtn = document.querySelector('button[data-destroy]');
+const input = document.querySelector('input');
 
-const createBoxes = (amount) => {
-  boxes.innerHTML = "";
+const createBoxes = amount => {
+  boxes.innerHTML = '';
   let size = 30;
   for (let i = 0; i < amount; i++) {
-    const newDiv = document.createElement("div");
+    const newDiv = document.createElement('div');
     newDiv.style.backgroundColor = getRandomHexColor();
     newDiv.style.width = `${size}px`;
     newDiv.style.height = `${size}px`;
@@ -23,19 +23,19 @@ const createBoxes = (amount) => {
 };
 
 const destroyBoxes = () => {
-  boxes.innerHTML = "";
-  input.value = "";
+  boxes.innerHTML = '';
+  input.value = '';
 };
 
-createBtn.addEventListener("click", () => {
+createBtn.addEventListener('click', () => {
   const amount = parseInt(input.value);
   if (amount >= 1 && amount <= 100) {
     createBoxes(amount);
-    input.value = "";
+    input.value = '';
   }
 });
 
-destroyBtn.addEventListener("click", destroyBoxes);
+destroyBtn.addEventListener('click', destroyBoxes);
 
 // Напиши скрипт створення й очищення колекції елементів з наступним функціоналом.
 
